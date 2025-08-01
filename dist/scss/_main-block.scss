@@ -1,0 +1,203 @@
+.main {
+    padding: 32px 16px 16px;
+
+    @media (max-width: 767px) { 
+        padding: 0 0 8px 0;
+    }
+}
+.main-block {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    border-radius: 12px;
+    padding: 4vw;
+    height: 524px;
+
+    @media (min-width: 1440px) { 
+        padding: 64px; 
+    }
+
+    @media (max-width: 767px) { 
+        height: 576px;
+        justify-content: flex-end; 
+        border-radius: 0;
+        padding: 8px;
+
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url(images/main-banner.jpg);
+        background-position: center;
+        z-index: 0;
+        border-radius: 12px;
+
+        @media (max-width: 767px) { 
+            border-radius: 0;
+        }
+    }
+
+
+    &__content {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+
+        @media (max-width: 767px) {  
+            gap: 16px; 
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: 5vw;
+        line-height: 100%;
+        letter-spacing: -0.03em;
+        color: var(--semantic-neutral-0);
+        max-width: 1000px;
+        margin: 0;
+
+
+        @media (min-width: 1440px) { 
+            font-size: 72px;
+        }
+
+         @media (max-width: 767px) {    
+            font-size: 36px;
+            line-height: 122%;
+            letter-spacing: -0.06em; 
+            display: inline;               
+         }
+
+        span {
+            color: var(--semantic-brand-500);
+        }
+    }
+
+    &__text {
+        font-size: 24px;
+        line-height: 133%;
+        color: var(--base-white-60);
+        max-width: 500px;
+
+         @media (max-width: 767px) { 
+            font-size: 16px;
+            line-height: 150%; 
+         }
+    }
+
+    &__promo {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding: 4px;
+        background: var(--semantic-neutral-0);
+        width: 383px;
+        position: relative;
+
+         @media (max-width: 767px) { 
+            width: 100%;
+         }
+
+        .btn {
+            box-shadow: none;
+            border-radius: 16px;
+            width: 50%;
+
+             @media (max-width: 767px) { 
+                height: 48px;
+             }
+        }
+    }
+
+    .promocode {
+        display: block;
+        align-items: stretch;
+        justify-content: stretch;
+        width: 50%;
+        position: relative;
+        font-size: 18px;
+        line-height: 156%;
+        color: var(--semantic-neutral-800);
+        cursor: pointer;
+
+        &__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        &__code {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; 
+            top: 0;
+            background: var(--semantic-neutral-0);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+
+            &.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+        }     
+    }
+
+    .copied-notification {
+        display: flex;
+        padding:  0 20px 0 40px;
+        align-items: center;
+        border-radius: 16px;
+        height: 28px;
+        background: url(images/badge.png) var(--semantic-success-50) left center no-repeat;     
+        position: absolute;
+        left: 105%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+        transition: opacity 1s ease, transform 1s ease;
+        z-index: 9999;
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--semantic-success-700, #15803D);
+
+        @media (max-width: 767px) { 
+            top: 110%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        
+      }
+      
+      .copied-notification.hide {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+    &__rooles-link {
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--buttons-link02-fg-button-link02);
+
+        @media (max-width: 767px) { 
+            margin: 0 auto;
+        }
+            
+    }
+} 

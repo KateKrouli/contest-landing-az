@@ -1,0 +1,95 @@
+<div class="main main-width">
+  <div class="main-block">
+    <div class="main-block__content">
+      <h1 class="main-block__title">
+        Müsabiqədə iştirak edin – <span>bonuslar qazanın!</span>
+      </h1>
+      <div class="main-block__text">
+        Stikerimizlə video çəkin və baxışlara görə ödəniş alın!
+      </div>
+      <div class="main-block__promo">
+        <a
+          href="https://refpa58144.com/L?tag=d_4590246m_1599c_&site=4590246&ad=1599"
+          class="btn btn--xl btn--primary"
+          >Bonus alın</a
+        >
+        <div class="promocode">
+          <div class="promocode__title">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.66602 10.0001C1.66602 10.0001 4.69632 4.16675 9.99935 4.16675C15.3024 4.16675 18.3327 10.0001 18.3327 10.0001C18.3327 10.0001 15.3024 15.8334 9.99935 15.8334C4.69632 15.8334 1.66602 10.0001 1.66602 10.0001Z"
+                stroke="#324C67"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.99935 12.5001C11.3801 12.5001 12.4993 11.3808 12.4993 10.0001C12.4993 8.61937 11.3801 7.50008 9.99935 7.50008C8.61864 7.50008 7.49935 8.61937 7.49935 10.0001C7.49935 11.3808 8.61864 12.5001 9.99935 12.5001Z"
+                stroke="#324C67"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Promokod
+          </div>
+          <div class="promocode__code">ILKPUL</div>
+        </div>
+      </div>
+      <a
+        href="https://refpa58144.com/L?tag=d_4590246m_1599c_&site=4590246&ad=1599"
+        class="main-block__rooles-link"
+        >İştirak qaydaları</a
+      >
+    </div>
+    <div class="main-block__background"></div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".promocode").forEach((promo) => {
+      promo.addEventListener("click", () => {
+        const codeEl = promo.querySelector(".promocode__code");
+        if (!codeEl) return;
+
+        codeEl.classList.add("visible");
+        const codeText = codeEl.textContent.trim();
+
+        navigator.clipboard
+          .writeText(codeText)
+          .then(() => {
+            const container = promo.closest(".main-block__promo");
+            if (container) {
+              showCopiedNotification(container, `Promokodunuz kopyalandı!`);
+            }
+          })
+          .catch((err) => {
+            console.error("Error", err);
+          });
+      });
+    });
+
+    function showCopiedNotification(container, message) {
+      const existing = container.querySelector(".copied-notification");
+      if (existing) existing.remove();
+
+      const notification = document.createElement("div");
+      notification.className = "copied-notification";
+      notification.textContent = message;
+      container.appendChild(notification);
+
+      setTimeout(() => {
+        notification.classList.add("hide");
+        notification.addEventListener("transitionend", () => {
+          notification.remove();
+        });
+      }, 3000);
+    }
+  });
+</script>
